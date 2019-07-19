@@ -18,7 +18,7 @@ with open(path + 'driving_log.csv') as csvfile:
 images = []
 measurements = []
 
-correction = 0.1  # this is a parameter to tune
+correction = 0.3  # this is a parameter to tune
 for line in lines:
     center_image_filename = line[0] #.split('/')[-1]
     left_image_filename = line[1] #.split('/')[-1]
@@ -81,7 +81,7 @@ model.add(Convolution2D(filters=36, kernel_size=5, strides=(2, 2), activation='r
 model.add(Convolution2D(filters=48, kernel_size=5, strides=(2, 2), activation='relu'))
 model.add(Convolution2D(filters=64, kernel_size=3, activation='relu'))
 model.add(Convolution2D(filters=64, kernel_size=3, activation='relu'))
-model.add(Dropout(0.1))
+# model.add(Dropout(0.1))
 model.add(Flatten())
 model.add(Dense(100))
 model.add(Dense(50))
