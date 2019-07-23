@@ -48,15 +48,16 @@ python drive.py model.h5
 
 #### 3. Submission code is usable and readable
 
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline 
+I used for training and validating the model, and it contains comments to explain how the code works.
 
 ### Model Architecture and Training Strategy
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 24 and 64 (model.py lines 55-66) 
+My model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 24 and 64 (model.py lines 54-65) 
 
-The model includes RELU layers to introduce nonlinearity (code line 57-61), and the data is normalized in the model using a Keras lambda layer (code line 56). 
+The model includes RELU layers to introduce nonlinearity (code line 56-60), and the data is normalized in the model using a Keras lambda layer (code line 55). 
 
 #### 2. Attempts to reduce overfitting in the model
 
@@ -66,7 +67,7 @@ The model was tested by running it through the simulator and ensuring that the v
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 75).
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 67).
 
 #### 4. Appropriate training data
 
@@ -96,7 +97,7 @@ Despite this, the car could drive several meters in a straight line.
 
 I looked at the dataset and realized that the hood of the car falls into the 
 input of the neural network. Therefore, I increased the parameters of 
-Cropping2D (line 62).
+Cropping2D (model.py line 54).
 
 After that, the car could drive on straight and smooth turn but it left in 
 a turn with a small radius outside.
@@ -111,7 +112,7 @@ around the track without leaving the road. [Track recording](https://www.youtube
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 62-73) consisted of a 
+The final model architecture (model.py lines 54-65) consisted of a 
 convolution neural network with the following layers and layer sizes:
 
 
